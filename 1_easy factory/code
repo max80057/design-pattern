@@ -1,0 +1,138 @@
+public class Operation {
+    float numberA = 0;
+    float numberB = 0;
+    float result = 0;
+    String errorMsg = "";
+
+    public void Operation(){
+
+    }
+
+    public void setNumberA(float originalNumber) {
+        this.numberA = originalNumber;
+    }
+
+    public float getNumberA() {
+        return numberA;
+    }
+
+    public void setNumberB(float payNumber) {
+        this.numberB = payNumber;
+    }
+
+    public float getNumberB() {
+        return numberB;
+    }
+
+    public float getResult(){
+        return result;
+    }
+
+}
+
+public class OperationAdd extends Operation{
+    public void OperationAdd(){
+
+    }
+
+        @Override
+        public float getResult() {
+            float num = 0;
+            num = getNumberA() + getNumberB();
+
+            return num;
+        }
+}
+
+public class OperationSub extends Operation{
+    public void OperationSub(){
+
+    }
+
+    @Override
+    public float getResult() {
+        float num = 0;
+        num = getNumberA() - getNumberB();
+
+        return num;
+    }
+}
+
+public class OperationMul extends Operation{
+    public void OperationMul(){
+
+    }
+
+    @Override
+    public float getResult() {
+        float num = 0;
+        num = getNumberA() * getNumberB();
+
+        return num;
+    }
+}
+
+public class OperationDiv extends Operation{
+    public void OperationDiv(){
+
+    }
+
+    @Override
+    public float getResult() {
+        float num = 0;
+        if(getNumberB() <= 0){
+            num =0;
+            errorMsg = "除數為0，請輸入別組數字";
+        }else {
+            num = getNumberA() / getNumberB();
+        }
+        return num;
+    }
+}
+
+public class CreateType{
+
+    public Operation create (String type){
+        Operation operation = null;
+        if(type.equals("add")){
+            operation = new OperationAdd();
+        }else if(type.equals("sub")){
+            operation = new OperationSub();
+        }else if(type.equals("mul")){
+            operation = new OperationMul();
+        }else if(type.equals("div")){
+            operation = new OperationDiv();
+        }else{
+
+        }
+        return operation;
+    }
+}
+
+public class test {
+
+    public static void main(String[] args) {
+        Operation work = new CreateType().create("add");
+        work.setNumberA(63);
+        work.setNumberB(7);
+        System.out.println(work.getResult());//70.0
+
+        work = new CreateType().create("sub");
+        work.setNumberA(63);
+        work.setNumberB(7);
+        System.out.println(work.getResult());//56.0
+
+        work = new CreateType().create("mul");
+        work.setNumberA(63);
+        work.setNumberB(7);
+        System.out.println(work.getResult());//441.0
+
+        work = new CreateType().create("div");
+        work.setNumberA(63);
+        work.setNumberB(7);
+        System.out.println(work.getResult());//9.0
+
+    }
+}
+
+
