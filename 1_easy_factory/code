@@ -112,22 +112,22 @@ public class test {
         Operation work = new CreateType().create("add");
         work.setNumberA(63);
         work.setNumberB(7);
-        System.out.println(work.getResult());
+        System.out.println(work.getResult());//70.0
 
         work = new CreateType().create("sub");
         work.setNumberA(63);
         work.setNumberB(7);
-        System.out.println(work.getResult());
+        System.out.println(work.getResult());//56.0
 
         work = new CreateType().create("mul");
         work.setNumberA(63);
         work.setNumberB(7);
-        System.out.println(work.getResult());
+        System.out.println(work.getResult());//441.0
 
         work = new CreateType().create("div");
         work.setNumberA(63);
         work.setNumberB(7);
-        System.out.println(work.getResult());
+        System.out.println(work.getResult());//9.0
 
     }
 }
