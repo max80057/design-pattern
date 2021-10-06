@@ -1,7 +1,8 @@
 public class main {
 
     public static void main(String[] args) {
-        Operation work = new EasyFactory().create("add");
+        Operation work;
+        work = new EasyFactory().create("add");
         work.setNumberA(63);
         work.setNumberB(7);
         System.out.println(work.getResult());

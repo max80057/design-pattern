@@ -1,12 +1,9 @@
-public class Operation {
+public abstract class Operation {
     float numberA = 0;
     float numberB = 0;
     float result = 0;
     String errorMsg = "";
 
-    public void Operation(){
-
-    }
 
     public void setNumberA(float originalNumber) {
         this.numberA = originalNumber;
